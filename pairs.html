@@ -1,0 +1,9 @@
+from fastapi import Request
+from fastapi.templating import Jinja2Templates
+templates = Jinja2Templates(directory="app/templates")
+
+@router.get("/pairs", include_in_schema=False)
+def list_pairs_html(request: Request, min_liq: float = 1000, limit: int = 100):
+    # reuse the JSON function to avoid drift
+    pairs = list_pairs(limit=limit, min_liq=min_liq)
+    return templates.TemplateResponse("pair_row.html", {"request": request, "pairs": pairs})
