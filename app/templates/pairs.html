@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<table hx-get="/api/pairs?min_liq=1000" hx-trigger="load, every 20s" hx-swap="innerHTML">
+  <thead>
+  <tr><th>Pair</th><th>Price</th><th>FDV</th><th>Liquidity</th></tr>
+  </thead>
+  <tbody>
+    <!-- filled by HTMX with rows -->
+  </tbody>
+</table>
+{% endblock %}
