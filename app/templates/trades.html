@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Trades</h2>
+<canvas id="spark" width="900" height="220"></canvas>
+<div hx-get="/api/pairs/{{pool_id}}/trades?limit=120" hx-trigger="load, every 15s" hx-swap="outerHTML"></div>
+<script src="/static/spark.js"></script>
+<script>renderSpark({ endpoint: "/api/pairs/{{pool_id}}/trades?limit=120" });</script>
+{% endblock %}
