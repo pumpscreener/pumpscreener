@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>PumpDex</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #eee; text-align:left; }
+    .muted { color:#6b7280; }
+    .pill { background:#eef; padding:2px 8px; border-radius:999px; font-size:12px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PumpDex</h1>
+    <p class="muted">Pump.fun tokens with PumpSwap LPs only • live indexer</p>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
