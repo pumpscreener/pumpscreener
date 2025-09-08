@@ -1,0 +1,12 @@
+{% for p in pairs %}
+<tr>
+  <td>
+    <a href="/pairs/{{p.id}}">{{p.token.symbol}}</a>
+    <span class="muted">{{p.token.mint[:6]}}…</span>
+    <span class="pill">{{p.dex}}</span>
+  </td>
+  <td>${{ '%.8f'|format(p.price) }}</td>
+  <td>${{ '%.0f'|format(p.fdv_usd) }}</td>
+  <td>${{ '%.0f'|format(p.liquidity_usd) }}</td>
+</tr>
+{% endfor %}
