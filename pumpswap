@@ -1,0 +1,22 @@
+.env.example
+  requirements.txt
+  run.sh
+  app/
+    __init__.py
+    config.py
+    models.py
+    schemas.py
+    indexer.py
+    services.py
+    api.py
+    main.py
+    fees.py
+    utils.py
+    templates/
+      base.html
+      pairs.html
+      pair_row.html
+      trades.html
+      not_found.html
+    static/
+      spark.js
